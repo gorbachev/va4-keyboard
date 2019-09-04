@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:va4-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -257,8 +257,6 @@ NoConn ~ 2025 2850
 NoConn ~ 2025 2950
 NoConn ~ 2025 3050
 NoConn ~ 2025 3150
-NoConn ~ 2025 3250
-NoConn ~ 3425 3250
 NoConn ~ 3425 3150
 NoConn ~ 3425 3050
 NoConn ~ 3425 2950
@@ -356,7 +354,7 @@ U 1 1 5C054865
 P 7675 2675
 F 0 "SW5" H 7675 2930 50  0000 C CNN
 F 1 "SW_PUSH" H 7675 2839 50  0000 C CNN
-F 2 "kbd:MX_ALPS_PG1350_noLed" H 7675 2675 50  0001 C CNN
+F 2 "Keebio-Parts:Hybrid_PCB_100H" H 7675 2675 50  0001 C CNN
 F 3 "" H 7675 2675 50  0000 C CNN
 	1    7675 2675
 	1    0    0    -1  
@@ -366,21 +364,126 @@ col3
 $Comp
 L Device:D D4
 U 1 1 5C05486C
-P 7975 2825
-F 0 "D4" V 8021 2746 50  0000 R CNN
-F 1 "D" V 7930 2746 50  0000 R CNN
-F 2 "kbd:D3_TH_SMD" H 7975 2825 50  0001 C CNN
-F 3 "~" H 7975 2825 50  0001 C CNN
-	1    7975 2825
+P 8175 2825
+F 0 "D4" V 8221 2746 50  0000 R CNN
+F 1 "D" V 8130 2746 50  0000 R CNN
+F 2 "kbd:D3_TH_SMD" H 8175 2825 50  0001 C CNN
+F 3 "~" H 8175 2825 50  0001 C CNN
+	1    8175 2825
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	7375 2425 7375 2675
 Connection ~ 7100 2975
 Wire Wire Line
-	7100 2975 7975 2975
-Wire Wire Line
 	7075 2975 7100 2975
 Wire Wire Line
 	6200 2975 7100 2975
+$Comp
+L Device:Rotary_Encoder_Switch SW6
+U 1 1 5D6F2CCE
+P 7700 3675
+F 0 "SW6" V 7746 3445 50  0000 R CNN
+F 1 "Rotary_Encoder_Switch" V 7655 3445 50  0000 R CNN
+F 2 "AcheronHardware:ALPS_EC11E" H 7550 3835 50  0001 C CNN
+F 3 "~" H 7700 3935 50  0001 C CNN
+	1    7700 3675
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5D6F4E9B
+P 7500 4300
+F 0 "R1" H 7650 4250 50  0000 R CNN
+F 1 "5k" H 7650 4350 50  0000 R CNN
+F 2 "Resistors:0805" V 7430 4300 50  0001 C CNN
+F 3 "~" H 7500 4300 50  0001 C CNN
+	1    7500 4300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5D6F5ECD
+P 7900 4300
+F 0 "R2" H 7970 4346 50  0000 L CNN
+F 1 "5k" H 7970 4255 50  0000 L CNN
+F 2 "Resistors:0805" V 7830 4300 50  0001 C CNN
+F 3 "~" H 7900 4300 50  0001 C CNN
+	1    7900 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 5D6F61D9
+P 7700 4100
+F 0 "#PWR01" H 7700 3850 50  0001 C CNN
+F 1 "GND" H 7705 3927 50  0000 C CNN
+F 2 "" H 7700 4100 50  0001 C CNN
+F 3 "" H 7700 4100 50  0001 C CNN
+	1    7700 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 3975 7700 4100
+Wire Wire Line
+	7975 2675 8175 2675
+Wire Wire Line
+	7100 2975 8175 2975
+Connection ~ 8175 2675
+Text GLabel 8175 2525 1    50   Input ~ 0
+Enc1Row0
+Wire Wire Line
+	8175 2675 8175 2525
+Text GLabel 7975 3375 2    50   Input ~ 0
+Enc1Row0
+Wire Wire Line
+	7800 3375 7975 3375
+Text GLabel 7600 3250 1    50   Input ~ 0
+col3
+Wire Wire Line
+	7600 3375 7600 3250
+Wire Wire Line
+	7600 3975 7600 4150
+Wire Wire Line
+	7600 4150 7500 4150
+Wire Wire Line
+	7800 3975 7800 4150
+Wire Wire Line
+	7800 4150 7900 4150
+Wire Wire Line
+	7500 4450 7500 4550
+Wire Wire Line
+	7900 4450 7900 4550
+Wire Wire Line
+	7500 4550 7700 4550
+Wire Wire Line
+	7700 4550 7700 4625
+Connection ~ 7700 4550
+Wire Wire Line
+	7700 4550 7900 4550
+$Comp
+L power:VCC #PWR02
+U 1 1 5D7008C5
+P 7700 4625
+F 0 "#PWR02" H 7700 4475 50  0001 C CNN
+F 1 "VCC" H 7717 4798 50  0000 C CNN
+F 2 "" H 7700 4625 50  0001 C CNN
+F 3 "" H 7700 4625 50  0001 C CNN
+	1    7700 4625
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7500 4150 7250 4150
+Connection ~ 7500 4150
+Wire Wire Line
+	7900 4150 8125 4150
+Connection ~ 7900 4150
+Text GLabel 2025 3250 0    50   Input ~ 0
+encA
+Text GLabel 7250 4150 0    50   Input ~ 0
+encA
+Text GLabel 8125 4150 2    50   Input ~ 0
+encB
+Text GLabel 3425 3250 2    50   Input ~ 0
+encB
 $EndSCHEMATC
