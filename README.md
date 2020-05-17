@@ -1,4 +1,4 @@
-# The DIY Keyboard `va4` (v0.3.x)
+# The DIY Keyboard `va4` (v0.4.x)
 
 `va4` the 4x2 key split keyboard.
 
@@ -15,6 +15,8 @@
 ![photo(v0.2.0)](./images/va4-v0_2_0-02.jpg)
 
 ## Features
+
+* 🕹 Support for `Rotary Encoder` in v0.4
 
 * ⌨️ Support `Cherry MX Compatible Switch` and `Kailh Low Profile Choc Switch`
 
